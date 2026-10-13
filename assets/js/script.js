@@ -19,7 +19,7 @@ const persona = {
     eta: 19 ,
     citta: `Palermo`
 }
-console.log(persona);
+console.log(`${persona.nome} ${persona.cognome}, ${persona.eta} anni, vivo a ${persona.citta}`);
 
 /* ESERCIZIO 2 — Aggiungi e rimuovi
    Sull'oggetto 'persona': aggiungi 'email', poi rimuovi 'eta'.
@@ -41,6 +41,8 @@ console.log(persona);
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+let cap = String;
+
 const utente = {
     nome: `Salvo`,
     cognome: `Viola`,
@@ -50,7 +52,7 @@ const utente = {
         cap:20121
     }
 }
-console.log(utente.indirizzo.cap);
+console.log(`CAP: ${utente.indirizzo.cap}`);
 
 /* ESERCIZIO 4 — Bracket dinamica
    Sull'oggetto 'persona', variabile chiave = 'nome'.
@@ -75,11 +77,11 @@ let b = 15;
 let c = 26;
 
 if (a > b && a > c){
-    console.log(a);
+    console.log(`Il numero maggiore è: ${a}`);
 }else if (b > a && b > c){
-    console.log(b);
+    console.log(`Il numero maggiore è: ${b}`);
 }else if (c > a && c > b){
-    console.log(c);
+    console.log(`Il numero maggiore è: ${c}`);
 }else {
     console.log(`Pareggio`);
 }
@@ -93,21 +95,20 @@ if (a > b && a > c){
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-let totale = 35; 
-let spedizione = 9.90; 
-let totaleFinale = totale + spedizione; 
+let totale = 45; 
+let spedizione;  
 
 if(totale >= 50) {
     spedizione = 0;
+    console.log(`Totale carrello ${totale}€ - Spedizione: Gratuita - Totale finale: ${totale + spedizione}€`)
 }else {
     spedizione = 9.90;
+    console.log(`Totale carrello ${totale}€ - Spedizione: ${spedizione}€ - Totale finale: ${totale + spedizione}€`)
 }
-console.log(`Totale carrello ${totale}€ - Spedizione: ${spedizione}€ - Totale finale: ${totaleFinale}€`);
 
-let sped = totale >= 50 ? 0 : 9.90;
-let totFinale = totale + spedizione;
-
-console.log(`Totale carrello ${totale}€ - Spedizione: ${spedizione}€ - Totale finale: ${totaleFinale}€`);
+const totCarr = totale >= 50 ? 
+console.log(`Totale carrello ${totale}€ - Spedizione: Gratuita - Totale finale: ${totale + 0}€`)
+: console.log(`Totale carrello ${totale}€ - Spedizione: 9,90€ - Totale finale: ${totale + 9,90}€`);
 
 /* ESERCIZIO 7 — typeof check
    Crea un array con 3 valori diversi (es. [42, 'ciao', true]).
@@ -115,6 +116,16 @@ console.log(`Totale carrello ${totale}€ - Spedizione: ${spedizione}€ - Total
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+const myArr = [51, `mondo`, false];
+
+for(let i = 0; i < myArr.length; i++) {
+    if (typeof myArr[i] === `number`){
+        console.log(`${myArr[i]} è un numero`);
+    } else{
+        console.log(`${myArr[i]} non è un numero`);
+    }
+}
 
 /* ESERCIZIO 8 — Array dei numeri
    Array vuoto. Aggiungi 1..5 con push. Aggiungi 0 all'inizio con unshift.
@@ -146,7 +157,7 @@ console.log(numeri.length);
 const prodotto = [`Penna`, `Quaderno`, `Zaino`, `Astuccio`]; 
 console.log(prodotto);
 
-prodotto.splice(1,1,);
+prodotto.splice(1,1);
 console.log(prodotto);
 
 prodotto.splice(1,0,`Diario`);
@@ -162,13 +173,13 @@ console.log(prodotto);
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 const prodotti = [`Penna`, `Quaderno`, `Zaino`];
-const cercato = `Zaino`;
-const indice = prodotti.indexOf(cercato);
+let cercato = `Zaino`;
+let cerca = prodotti.includes(cercato);
+console.log(`Zaino è in carrello: ${cerca}`); 
 
-console.log(`${cercato} è nel carrello: ${prodotti.includes(cercato)}`);
-
-if (indice !== -1) {
-  console.log(`Posizione: ${indice}`);
+if (cerca) {
+    let cercaZaino = prodotti.indexOf(cercato);
+    console.log(`Posizione: ${cercaZaino}`);
 } else {
   console.log(`Non in carrello`);
 }
