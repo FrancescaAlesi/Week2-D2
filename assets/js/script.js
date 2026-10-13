@@ -93,6 +93,21 @@ if (a > b && a > c){
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+let totale = 35; 
+let spedizione = 9.90; 
+let totaleFinale = totale + spedizione; 
+
+if(totale >= 50) {
+    spedizione = 0;
+}else {
+    spedizione = 9.90;
+}
+console.log(`Totale carrello ${totale}€ - Spedizione: ${spedizione}€ - Totale finale: ${totaleFinale}€`);
+
+let sped = totale >= 50 ? 0 : 9.90;
+let totFinale = totale + spedizione;
+
+console.log(`Totale carrello ${totale}€ - Spedizione: ${spedizione}€ - Totale finale: ${totaleFinale}€`);
 
 /* ESERCIZIO 7 — typeof check
    Crea un array con 3 valori diversi (es. [42, 'ciao', true]).
@@ -101,13 +116,23 @@ if (a > b && a > c){
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-
 /* ESERCIZIO 8 — Array dei numeri
    Array vuoto. Aggiungi 1..5 con push. Aggiungi 0 all'inizio con unshift.
    Stampa array e length.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+const numeri = []; 
+
+numeri.unshift(0);
+numeri.push(1);
+numeri.push(2);
+numeri.push(3);
+numeri.push(4);
+numeri.push(5);
+console.log(numeri);
+console.log(numeri.length);
 
 
 /* ESERCIZIO 9 — Carrello con splice
